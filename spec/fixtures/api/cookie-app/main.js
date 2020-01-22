@@ -40,8 +40,6 @@ app.on('ready', async function () {
   } catch (e) {
     process.stdout.write('ERROR')
   } finally {
-    process.stdout.end()
-
-    app.quit()
+    process.stdout.end(() => app.quit())
   }
 })

@@ -8,8 +8,7 @@ const gotTheLock = app.requestSingleInstanceLock()
 
 app.on('second-instance', (event, args) => {
   setImmediate(() => {
-    console.log(JSON.stringify(args))
-    app.exit(0)
+    process.stdout.end(JSON.stringify(args), () => app.exit(0))
   })
 })
 

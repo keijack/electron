@@ -32,7 +32,7 @@ if (process.platform === 'win32') {
     return true
   }
   console.log = console.error = console.warn = consoleLog
-  process.stdout.write = process.stderr.write = streamWrite
+  process.stdout.write = process.stdout.end = process.stderr.write = process.stderr.end = streamWrite
 }
 
 // Don't quit on fatal error.

@@ -8,10 +8,10 @@ app.on('ready', function () {
 
   setTimeout(() => {
     if (win.isMenuBarVisible()) {
-      console.log('Window has a menu')
+      process.stdout.write('Window has a menu')
     } else {
-      console.log('Window has no menu')
+      process.stdout.write('Window has no menu')
     }
-    app.quit()
+    process.stdout.end(() => app.quit())
   })
 })
